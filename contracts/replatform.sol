@@ -9,7 +9,8 @@ contract replatform is ERC20Capped, Ownable{
 
   constructor() 
     ERC20Capped(MAX_SUPPLY) //Sets max token supply to 10,000 with 18 decimals
-    ERC20("Replatform", "NGMI"){} //Sets name to Replatform, symbol to NGMI
+    ERC20("Replatform", "NGMI")
+    Ownable(){} //Sets name to Replatform, symbol to NGMI
 
     //function to mint total supply to contract
     //function to funnel by 18th decimal into partitioner
