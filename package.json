@@ -1,0 +1,17 @@
+{
+  "name": "replatform",
+  "version": "1.0.0",
+  "description": "ERC1155 for multi Replatform Token",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@openzeppelin/contracts": "^3.4.0"
+  }
+}
