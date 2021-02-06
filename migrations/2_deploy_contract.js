@@ -1,7 +1,9 @@
 const replatform = artifacts.require("replatform");
-const replatformPartitioner = artifacts.require("replatformPartitioner")
+const ERC20Treaury = artifacts.require("ERC20Treasury")
+
 
 module.exports = function (deployer) {
   deployer.deploy(replatform);
-  deployer.deploy(replatformPartitioner);
+  deployer.deploy(ERC20Treaury);
+ 
 };
