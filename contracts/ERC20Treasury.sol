@@ -30,27 +30,32 @@ contract ERC20Treasury is ERC20Capped, Ownable{
     return Treasury;
   }
 
-  function _increaseTreasury(uint256 amount) public onlyOwner(){
+  function _increaseTreasuryFromSupply(uint256 amount) public onlyOwner(){
     require((Treasury + amount) < cap(), "Cannot increase Treasury beyond capped supply");
     Treasury = (Treasury + amount);
-    _mint(owner(), amount); 
+    _mint(owner(), amount); //need a separate function for deposit//
+  }
+
+  function _increaseTreasuryFromDeposit(uint256 amount) public onlyOwner(){
+    require((Treasury + amount) < cap(), "Cannot increase Treasury beyond capped supply");
+    Treasury = (Treasury + amount);
   }
 
   function _decreaseTreasury(uint256 amount) public onlyOwner(){
-    require((Treasury - amount) > 0, "Cannot decrease Treasury lower than zero");
+    require((Treasury - amount) >= 0, "Cannot decrease Treasury lower than zero");
     Treasury = (Treasury - amount);
   }
 
   function withdrawFromTreasury(address batch, uint256 amount) public onlyOwner(){
-    require((Treasury - amount) > 0, "Cannot decrease Treasury lower than zero");
+    require((Treasury - amount) >= 0, "Cannot decrease Treasury lower than zero");
     _decreaseTreasury(amount);
-    transferFrom(owner(), batch, amount);
+    _transfer(owner(), batch, amount);
   }
 
   function depositToTreasury(address batch, uint256 amount) public onlyOwner(){
     require((Treasury + amount) < cap(), "Cannot increase Treasury beyond capped supply");
-    _increaseTreasury(amount);
-    transferFrom(batch, owner(), amount);
+    _increaseTreasuryFromDeposit(amount);
+    _transfer( batch, owner(), amount);
   }
   
 }
