@@ -1,9 +1,5 @@
-const replatform = artifacts.require("replatform");
-const ERC20Treaury = artifacts.require("ERC20Treasury")
-
-
+const ERC20Treasury = artifacts.require("./ERC20Treasury.sol")
 module.exports = function (deployer) {
-  deployer.deploy(replatform);
-  deployer.deploy(ERC20Treaury);
+  deployer.deploy(ERC20Treasury, "Replatform", "NGMI", 2000*10**18, 100000);
  
 };

@@ -15,12 +15,13 @@ contract ERC20Treasury is ERC20Capped, Ownable{
 
   ERC20Capped(_cappedSupply)
   ERC20(_name, _symbol)
-  Ownable(){
+  Ownable() public{
     /**Treasury contract 
     1. Sets cap 
     2. Sets name
     3. Sets treasury supply as portion of total ERC20 */
     Treasury = _initialTreasury;
+    _mint(owner(), Treasury);
   }
 
   function totalTreasury() public view returns(uint256){
