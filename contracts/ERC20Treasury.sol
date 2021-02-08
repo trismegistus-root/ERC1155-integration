@@ -21,27 +21,27 @@ contract ERC20Treasury is ERC20Capped, Ownable{
     /**Treasury contract 
     1. Sets cap 
     2. Sets name
-    3. Sets treasury supply as portion of total ERC20 */
+    3. Sets treasury supply as portion of total capped ERC20 */
     Treasury = _initialTreasury;
-    _mint(owner(), Treasury);
+    _mint(owner(), _initialTreasury);
   }
 
   function totalTreasury() public view returns(uint256){
     return Treasury;
   }
 
-  function _increaseTreasuryFromSupply(uint256 amount) public onlyOwner(){
+  function _increaseTreasuryFromSupply(uint256 amount) internal onlyOwner(){
     require((Treasury + amount) < cap(), "Cannot increase Treasury beyond capped supply");
     Treasury = (Treasury + amount);
     _mint(owner(), amount); //need a separate function for deposit//
   }
 
-  function _increaseTreasuryFromDeposit(uint256 amount) public onlyOwner(){
+  function _increaseTreasuryFromDeposit(uint256 amount) internal onlyOwner(){
     require((Treasury + amount) < cap(), "Cannot increase Treasury beyond capped supply");
     Treasury = (Treasury + amount);
   }
 
-  function _decreaseTreasury(uint256 amount) public onlyOwner(){
+  function _decreaseTreasury(uint256 amount) internal onlyOwner(){
     require((Treasury - amount) >= 0, "Cannot decrease Treasury lower than zero");
     Treasury = (Treasury - amount);
   }
