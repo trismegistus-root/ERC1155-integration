@@ -14,7 +14,7 @@ contract ERC20Treasury is ERC20Capped, Ownable, AccessControl{
   uint256 public UnmintedSupply;
   bytes32 public constant BATCH_OWNER = keccak256('batchOwner');
 
-   function addBatchOwnerRole(address _account) public  onlyOwner(){
+   function addBatchOwnerRole(address _account) public onlyOwner(){
         grantRole(BATCH_OWNER, _account);         // (from OZ AccessControl)  // emits a RoleGranted(role, account, sender) event
     }
 
@@ -83,16 +83,15 @@ contract ERC20Treasury is ERC20Capped, Ownable, AccessControl{
     Treasury = Treasury.add(amount);
     _partition[_batchOwner] = _partition[_batchOwner].sub(amount);
     if(_partition[_batchOwner] == 0){
-      removeBatchOwnerRole(_batchOwner);
+      removeBatchOwnerRole(_batchOwner, {from: owner()});
     }
   }
 
 
-  function withdrawFromTreasuryToBatch(address batch, uint256 amount) public {
+  function withdrawFromTreasuryToBatch(address batch, uint256 amount) public batchOwner() {
       require(Treasury.sub(amount) >= 0, "cannot withdraw more than is in treasury");
       Treasury = Treasury.sub(amount);
       _partition[batch] = amount;
-      addBatchOwnerRole(batch, {from: owner()});
   }
 
 
