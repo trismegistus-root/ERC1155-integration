@@ -449,7 +449,7 @@
         "id": 2,
         "nodeType": "ImportDirective",
         "scope": 200,
-        "sourceUnit": 2486,
+        "sourceUnit": 2515,
         "src": "66:61:0",
         "symbolAliases": [],
         "unitAlias": ""
@@ -460,7 +460,7 @@
         "id": 3,
         "nodeType": "ImportDirective",
         "scope": 200,
-        "sourceUnit": 368,
+        "sourceUnit": 397,
         "src": "128:52:0",
         "symbolAliases": [],
         "unitAlias": ""
@@ -471,7 +471,7 @@
         "id": 4,
         "nodeType": "ImportDirective",
         "scope": 200,
-        "sourceUnit": 772,
+        "sourceUnit": 801,
         "src": "181:51:0",
         "symbolAliases": [],
         "unitAlias": ""
@@ -486,10 +486,10 @@
               "id": 5,
               "name": "ERC20Capped",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 2485,
+              "referencedDeclaration": 2514,
               "src": "260:11:0",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_ERC20Capped_$2485",
+                "typeIdentifier": "t_contract$_ERC20Capped_$2514",
                 "typeString": "contract ERC20Capped"
               }
             },
@@ -504,10 +504,10 @@
               "id": 7,
               "name": "Ownable",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 367,
+              "referencedDeclaration": 396,
               "src": "273:7:0",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_Ownable_$367",
+                "typeIdentifier": "t_contract$_Ownable_$396",
                 "typeString": "contract Ownable"
               }
             },
@@ -517,11 +517,11 @@
           }
         ],
         "contractDependencies": [
-          367,
-          2410,
-          2485,
-          2554,
-          2862
+          396,
+          2439,
+          2514,
+          2583,
+          2891
         ],
         "contractKind": "contract",
         "documentation": null,
@@ -529,11 +529,11 @@
         "id": 199,
         "linearizedBaseContracts": [
           199,
-          367,
-          2485,
-          2410,
-          2554,
-          2862
+          396,
+          2514,
+          2439,
+          2583,
+          2891
         ],
         "name": "ERC20Treasury",
         "nodeType": "ContractDefinition",
@@ -545,10 +545,10 @@
               "id": 9,
               "name": "SafeMath",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 771,
+              "referencedDeclaration": 800,
               "src": "290:8:0",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_SafeMath_$771",
+                "typeIdentifier": "t_contract$_SafeMath_$800",
                 "typeString": "library SafeMath"
               }
             },
@@ -657,7 +657,7 @@
                           "name": "owner",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 305,
+                          "referencedDeclaration": 334,
                           "src": "727:5:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_internal_view$__$returns$_t_address_$",
@@ -708,7 +708,7 @@
                       "name": "_mint",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 2290,
+                      "referencedDeclaration": 2319,
                       "src": "721:5:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_address_$_t_uint256_$returns$__$",
@@ -764,10 +764,10 @@
                   "name": "ERC20Capped",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 2485,
+                  "referencedDeclaration": 2514,
                   "src": "488:11:0",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_type$_t_contract$_ERC20Capped_$2485_$",
+                    "typeIdentifier": "t_type$_t_contract$_ERC20Capped_$2514_$",
                     "typeString": "type(contract ERC20Capped)"
                   }
                 },
@@ -810,10 +810,10 @@
                   "name": "ERC20",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 2410,
+                  "referencedDeclaration": 2439,
                   "src": "517:5:0",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_type$_t_contract$_ERC20_$2410_$",
+                    "typeIdentifier": "t_type$_t_contract$_ERC20_$2439_$",
                     "typeString": "type(contract ERC20)"
                   }
                 },
@@ -829,10 +829,10 @@
                   "name": "Ownable",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 367,
+                  "referencedDeclaration": 396,
                   "src": "541:7:0",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_type$_t_contract$_Ownable_$367_$",
+                    "typeIdentifier": "t_type$_t_contract$_Ownable_$396_$",
                     "typeString": "type(contract Ownable)"
                   }
                 },
@@ -1146,7 +1146,7 @@
                             "name": "cap",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 2445,
+                            "referencedDeclaration": 2474,
                             "src": "954:3:0",
                             "typeDescriptions": {
                               "typeIdentifier": "t_function_internal_view$__$returns$_t_uint256_$",
@@ -1345,7 +1345,7 @@
                           "name": "owner",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 305,
+                          "referencedDeclaration": 334,
                           "src": "1057:5:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_internal_view$__$returns$_t_address_$",
@@ -1396,7 +1396,7 @@
                       "name": "_mint",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 2290,
+                      "referencedDeclaration": 2319,
                       "src": "1051:5:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_address_$_t_uint256_$returns$__$",
@@ -1438,7 +1438,7 @@
                   "name": "onlyOwner",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 318,
+                  "referencedDeclaration": 347,
                   "src": "907:9:0",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$__$",
@@ -1592,7 +1592,7 @@
                             "name": "cap",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 2445,
+                            "referencedDeclaration": 2474,
                             "src": "1193:3:0",
                             "typeDescriptions": {
                               "typeIdentifier": "t_function_internal_view$__$returns$_t_uint256_$",
@@ -1794,7 +1794,7 @@
                   "name": "onlyOwner",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 318,
+                  "referencedDeclaration": 347,
                   "src": "1146:9:0",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$__$",
@@ -2137,7 +2137,7 @@
                   "name": "onlyOwner",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 318,
+                  "referencedDeclaration": 347,
                   "src": "1345:9:0",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$__$",
@@ -2437,7 +2437,7 @@
                           "name": "owner",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 305,
+                          "referencedDeclaration": 334,
                           "src": "1693:5:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_internal_view$__$returns$_t_address_$",
@@ -2505,7 +2505,7 @@
                       "name": "_transfer",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 2236,
+                      "referencedDeclaration": 2265,
                       "src": "1683:9:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_address_$_t_address_$_t_uint256_$returns$__$",
@@ -2548,7 +2548,7 @@
                   "name": "onlyOwner",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 318,
+                  "referencedDeclaration": 347,
                   "src": "1552:9:0",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$__$",
@@ -2730,7 +2730,7 @@
                             "name": "cap",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 2445,
+                            "referencedDeclaration": 2474,
                             "src": "1837:3:0",
                             "typeDescriptions": {
                               "typeIdentifier": "t_function_internal_view$__$returns$_t_uint256_$",
@@ -2902,7 +2902,7 @@
                           "name": "owner",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 305,
+                          "referencedDeclaration": 334,
                           "src": "1958:5:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_internal_view$__$returns$_t_address_$",
@@ -2957,7 +2957,7 @@
                       "name": "_transfer",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 2236,
+                      "referencedDeclaration": 2265,
                       "src": "1940:9:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_address_$_t_address_$_t_uint256_$returns$__$",
@@ -3000,7 +3000,7 @@
                   "name": "onlyOwner",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 318,
+                  "referencedDeclaration": 347,
                   "src": "1790:9:0",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$__$",
@@ -3123,7 +3123,7 @@
       },
       {
         "attributes": {
-          "SourceUnit": 2486,
+          "SourceUnit": 2515,
           "absolutePath": "@openzeppelin/contracts/token/ERC20/ERC20Capped.sol",
           "file": "@openzeppelin/contracts/token/ERC20/ERC20Capped.sol",
           "scope": 200,
@@ -3138,7 +3138,7 @@
       },
       {
         "attributes": {
-          "SourceUnit": 368,
+          "SourceUnit": 397,
           "absolutePath": "@openzeppelin/contracts/access/Ownable.sol",
           "file": "@openzeppelin/contracts/access/Ownable.sol",
           "scope": 200,
@@ -3153,7 +3153,7 @@
       },
       {
         "attributes": {
-          "SourceUnit": 772,
+          "SourceUnit": 801,
           "absolutePath": "@openzeppelin/contracts/math/SafeMath.sol",
           "file": "@openzeppelin/contracts/math/SafeMath.sol",
           "scope": 200,
@@ -3170,22 +3170,22 @@
         "attributes": {
           "abstract": false,
           "contractDependencies": [
-            367,
-            2410,
-            2485,
-            2554,
-            2862
+            396,
+            2439,
+            2514,
+            2583,
+            2891
           ],
           "contractKind": "contract",
           "documentation": null,
           "fullyImplemented": true,
           "linearizedBaseContracts": [
             199,
-            367,
-            2485,
-            2410,
-            2554,
-            2862
+            396,
+            2514,
+            2439,
+            2583,
+            2891
           ],
           "name": "ERC20Treasury",
           "scope": 200
@@ -3200,7 +3200,7 @@
                 "attributes": {
                   "contractScope": null,
                   "name": "ERC20Capped",
-                  "referencedDeclaration": 2485,
+                  "referencedDeclaration": 2514,
                   "type": "contract ERC20Capped"
                 },
                 "id": 5,
@@ -3221,7 +3221,7 @@
                 "attributes": {
                   "contractScope": null,
                   "name": "Ownable",
-                  "referencedDeclaration": 367,
+                  "referencedDeclaration": 396,
                   "type": "contract Ownable"
                 },
                 "id": 7,
@@ -3239,7 +3239,7 @@
                 "attributes": {
                   "contractScope": null,
                   "name": "SafeMath",
-                  "referencedDeclaration": 771,
+                  "referencedDeclaration": 800,
                   "type": "library SafeMath"
                 },
                 "id": 9,
@@ -3435,7 +3435,7 @@
                       "overloadedDeclarations": [
                         null
                       ],
-                      "referencedDeclaration": 2485,
+                      "referencedDeclaration": 2514,
                       "type": "type(contract ERC20Capped)",
                       "value": "ERC20Capped"
                     },
@@ -3470,7 +3470,7 @@
                       "overloadedDeclarations": [
                         null
                       ],
-                      "referencedDeclaration": 2410,
+                      "referencedDeclaration": 2439,
                       "type": "type(contract ERC20)",
                       "value": "ERC20"
                     },
@@ -3524,7 +3524,7 @@
                       "overloadedDeclarations": [
                         null
                       ],
-                      "referencedDeclaration": 367,
+                      "referencedDeclaration": 396,
                       "type": "type(contract Ownable)",
                       "value": "Ownable"
                     },
@@ -3623,7 +3623,7 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 2290,
+                              "referencedDeclaration": 2319,
                               "type": "function (address,uint256)",
                               "value": "_mint"
                             },
@@ -3658,7 +3658,7 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 305,
+                                  "referencedDeclaration": 334,
                                   "type": "function () view returns (address)",
                                   "value": "owner"
                                 },
@@ -3876,7 +3876,7 @@
                       "overloadedDeclarations": [
                         null
                       ],
-                      "referencedDeclaration": 318,
+                      "referencedDeclaration": 347,
                       "type": "modifier ()",
                       "value": "onlyOwner"
                     },
@@ -4039,7 +4039,7 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 2445,
+                                      "referencedDeclaration": 2474,
                                       "type": "function () view returns (uint256)",
                                       "value": "cap"
                                     },
@@ -4218,7 +4218,7 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 2290,
+                              "referencedDeclaration": 2319,
                               "type": "function (address,uint256)",
                               "value": "_mint"
                             },
@@ -4253,7 +4253,7 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 305,
+                                  "referencedDeclaration": 334,
                                   "type": "function () view returns (address)",
                                   "value": "owner"
                                 },
@@ -4372,7 +4372,7 @@
                       "overloadedDeclarations": [
                         null
                       ],
-                      "referencedDeclaration": 318,
+                      "referencedDeclaration": 347,
                       "type": "modifier ()",
                       "value": "onlyOwner"
                     },
@@ -4535,7 +4535,7 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 2445,
+                                      "referencedDeclaration": 2474,
                                       "type": "function () view returns (uint256)",
                                       "value": "cap"
                                     },
@@ -4763,7 +4763,7 @@
                       "overloadedDeclarations": [
                         null
                       ],
-                      "referencedDeclaration": 318,
+                      "referencedDeclaration": 347,
                       "type": "modifier ()",
                       "value": "onlyOwner"
                     },
@@ -5160,7 +5160,7 @@
                       "overloadedDeclarations": [
                         null
                       ],
-                      "referencedDeclaration": 318,
+                      "referencedDeclaration": 347,
                       "type": "modifier ()",
                       "value": "onlyOwner"
                     },
@@ -5443,7 +5443,7 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 2236,
+                              "referencedDeclaration": 2265,
                               "type": "function (address,address,uint256)",
                               "value": "_transfer"
                             },
@@ -5478,7 +5478,7 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 305,
+                                  "referencedDeclaration": 334,
                                   "type": "function () view returns (address)",
                                   "value": "owner"
                                 },
@@ -5640,7 +5640,7 @@
                       "overloadedDeclarations": [
                         null
                       ],
-                      "referencedDeclaration": 318,
+                      "referencedDeclaration": 347,
                       "type": "modifier ()",
                       "value": "onlyOwner"
                     },
@@ -5803,7 +5803,7 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 2445,
+                                      "referencedDeclaration": 2474,
                                       "type": "function () view returns (uint256)",
                                       "value": "cap"
                                     },
@@ -5946,7 +5946,7 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 2236,
+                              "referencedDeclaration": 2265,
                               "type": "function (address,address,uint256)",
                               "value": "_transfer"
                             },
@@ -5995,7 +5995,7 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 305,
+                                  "referencedDeclaration": 334,
                                   "type": "function () view returns (address)",
                                   "value": "owner"
                                 },
@@ -6135,7 +6135,7 @@
     }
   },
   "schemaVersion": "3.3.3",
-  "updatedAt": "2021-02-10T00:00:10.314Z",
+  "updatedAt": "2021-02-10T00:15:55.316Z",
   "devdoc": {
     "methods": {
       "allowance(address,address)": {

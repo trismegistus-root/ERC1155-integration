@@ -11,7 +11,7 @@ contract Replatform is ERC20Treasury, ERC1155{
               uint256 cappedSupplyOfTreasury,
               uint256 initialAvailableSupplyOfTreasury) 
   ERC20Treasury(nameOfTreasury, symbolOfTreasury, cappedSupplyOfTreasury, initialAvailableSupplyOfTreasury)
-  ERC1155("./../URI/URI.json") public {
-    
-  }
+  ERC1155("./../URI/URI.json") public {}
+  
+  
 }
