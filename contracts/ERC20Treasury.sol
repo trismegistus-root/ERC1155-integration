@@ -12,19 +12,22 @@ contract ERC20Treasury is ERC20Capped, Ownable, AccessControl{
   uint256 public Treasury;
   uint256 public Bonds;
   uint256 public UnmintedSupply;
+  bytes32 public constant BATCH_OWNER = keccak256('batchOwner');
 
    function addBatchOwnerRole(address _account) public  onlyOwner(){
-        grantRole("batchOwner", _account);         // (from OZ AccessControl)  // emits a RoleGranted(role, account, sender) event
+        grantRole(BATCH_OWNER, _account);         // (from OZ AccessControl)  // emits a RoleGranted(role, account, sender) event
     }
 
    function removeBatchOwnerRole(address _account) public onlyOwner(){
-     revokeRole("batchOwner", _account);
+     revokeRole(BATCH_OWNER, _account);
    }
 
   modifier batchOwner() {
-    require(hasRole("batchOwner", msg.sender));
+    require(hasRole(BATCH_OWNER, msg.sender));
     _;
   }
+
+  mapping (address => uint256) internal _partition;
 
   constructor(string memory _name, 
               string memory _symbol, 
@@ -74,23 +77,22 @@ contract ERC20Treasury is ERC20Capped, Ownable, AccessControl{
   }
 
   function increaseTreasuryFromBatch(address _batchOwner, uint256 amount) public batchOwner() {
-    require(balanceOf(_batchOwner) >= amount, "You cannot deposit funds you do not own");
     require(Treasury.add(amount) <= cap(), "Cannot add more to Treasury than exists");
+    require(_partition[_batchOwner] <= amount, "Cannot deposit more than you own");
     _transfer(_batchOwner, owner(), amount);
     Treasury = Treasury.add(amount);
-    removeBatchOwnerRole(_batchOwner);
+    _partition[_batchOwner] = _partition[_batchOwner].sub(amount);
+    if(_partition[_batchOwner] == 0){
+      removeBatchOwnerRole(_batchOwner);
+    }
   }
 
 
-  function partitionDecreaseTreasury(uint256 amount) internal {
-    /**Require:
-        1. amount >= 0
-        2. treasury.sub(amount) >= 0
-        3. amount <= Treasury
-         */
-         require(amount >= 0 && amount <= Treasury, "Invalid amount requested");
-         require(Treasury.sub(amount) >= 0, "Amount requested brings Treasury below 0");
-         Treasury = Treasury.sub(amount);
+  function withdrawFromTreasuryToBatch(address batch, uint256 amount) public {
+      require(Treasury.sub(amount) >= 0, "cannot withdraw more than is in treasury");
+      Treasury = Treasury.sub(amount);
+      _partition[batch] = amount;
+      addBatchOwnerRole(batch, {from: owner()});
   }
 
 
