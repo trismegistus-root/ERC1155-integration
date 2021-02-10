@@ -43,7 +43,7 @@ contract ERC20Treasury is ERC20Capped, Ownable, AccessControl{
     2. Sets name
     3. Sets treasury supply as portion of total capped ERC20 */
     Treasury = _initialTreasury;
-    _mint(msg.sender, _initialTreasury);
+    _mint(owner(), _initialTreasury);
     Bonds = _cappedSupply.sub(Treasury);
     UnmintedSupply = cap().sub(totalSupply());
   }
