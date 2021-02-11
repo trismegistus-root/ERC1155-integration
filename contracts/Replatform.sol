@@ -14,4 +14,5 @@ contract Replatform is ERC20Treasury, ERC1155{
   ERC1155("./../URI/URI.json") public {}
   
   
+  
 }

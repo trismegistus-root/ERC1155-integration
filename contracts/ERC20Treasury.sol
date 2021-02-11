@@ -46,11 +46,11 @@ contract ERC20Treasury is ERC20Capped, Ownable, AccessControl{
     _mint(owner(), _initialTreasury);
     Bonds = _cappedSupply.sub(Treasury);
     UnmintedSupply = cap().sub(totalSupply());
+    _setupRole(DEFAULT_ADMIN_ROLE, msg.sender);
   }
 /**Total treasury is a portion of the total cap of ERC20 token.
   *Cap() - totalTreaury() = Bonds()
   *Bonds represent the DEX swappable token. Bonds are the supply of ERC20 that has not been locked for distribution.
-  *
   */
   function totalTreasury() public view returns(uint256){
     return Treasury;
@@ -70,31 +70,26 @@ contract ERC20Treasury is ERC20Capped, Ownable, AccessControl{
      mints bonds
      adds bonds to available treasury
   */
+
   function increaseTreasuryFromUnmintedBonds(uint256 amount) public onlyOwner() {
      require(amount < UnmintedSupply, "Not enough unminted bonds to cover deposit");
      _mint(owner(), amount);
      Treasury = Treasury.add(amount);
   }
 
-  function increaseTreasuryFromBatch(address _batchOwner, uint256 amount) public batchOwner() {
+  function increaseTreasuryFromBatch(uint256 amount) public batchOwner() {
     require(Treasury.add(amount) <= cap(), "Cannot add more to Treasury than exists");
-    require(_partition[_batchOwner] <= amount, "Cannot deposit more than you own");
-    _transfer(_batchOwner, owner(), amount);
+    require(_partition[msg.sender] <= amount, "Cannot deposit more than you own");
     Treasury = Treasury.add(amount);
-    _partition[_batchOwner] = _partition[_batchOwner].sub(amount);
-    if(_partition[_batchOwner] == 0){
-      removeBatchOwnerRole(_batchOwner, {from: owner()});
-    }
+    _partition[msg.sender] = _partition[msg.sender].sub(amount);
   }
 
-
-  function withdrawFromTreasuryToBatch(address batch, uint256 amount) public batchOwner() {
+  function withdrawFromTreasuryToBatch(uint256 amount) public batchOwner() {
       require(Treasury.sub(amount) >= 0, "cannot withdraw more than is in treasury");
+      require(amount <= 1*10**18, "Max batch withdrawal is 1 total token");
       Treasury = Treasury.sub(amount);
-      _partition[batch] = amount;
+      _partition[msg.sender] = amount;
   }
-
-
   
 }
 
