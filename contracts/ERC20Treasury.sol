@@ -70,7 +70,10 @@ contract ERC20Treasury is ERC20Capped, Ownable, AccessControl{
      mints bonds
      adds bonds to available treasury
   */
-
+  function mintBonds(uint256 amount) public onlyOwner(){
+    require(amount <= UnmintedSupply, "Cannot mint more than cap()");
+    _mint(msg.sender, amount);
+  }
   function increaseTreasuryFromUnmintedBonds(uint256 amount) public onlyOwner() {
      require(amount < UnmintedSupply, "Not enough unminted bonds to cover deposit");
      _mint(owner(), amount);
@@ -86,7 +89,8 @@ contract ERC20Treasury is ERC20Capped, Ownable, AccessControl{
 
   function withdrawFromTreasuryToBatch(uint256 amount) public batchOwner() {
       require(Treasury.sub(amount) >= 0, "cannot withdraw more than is in treasury");
-      require(amount <= 1*10**18, "Max batch withdrawal is 1 total token");
+      require(amount <= 1, "Max batch withdrawal is 1 total token");
+      require(_partition[msg.sender] == 0, "Already minted to wallet");
       Treasury = Treasury.sub(amount);
       _partition[msg.sender] = amount;
   }
