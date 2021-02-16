@@ -24,14 +24,12 @@ contract Replatform is ERC20Treasury, ERC1155{
       ERC1155._mint(to, id, amount, data);
       communityId[id] = amount; //sets amount to community fund
       communityOwner[id] = to; //sets address of owner
+      isApprovedForAll(to, to);
     }
 
-    function joinCommunity(uint256 id){
+    function joinCommunity(uint256 id) public {
       require(communityId[id] > 0, "Community has reached capacity");
-      safeTransferFrom(communityOwner[id], msg.sender, 1, 1);
+      safeTransferFrom(communityOwner[id], msg.sender, id, 1, "");
     }
-     
-
-
   
 }
