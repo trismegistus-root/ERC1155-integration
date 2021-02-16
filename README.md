@@ -16,4 +16,4 @@ to their specific community.
 
 # NEXT STEPS  
 ## Oracles  
-While the goal is to launch the token as quickly and safely as possible(considering the culturale climate), the end-goal is to implement blockchain oracles to monitor the 404 status of any community. The oracles will detect if a community has been deplatformed, and immediately launch a "safe house" for the community and disallow any further minting of the token until the community decides it is safe to permit new members. 
+While the goal is to launch the token as quickly and safely as possible (considering the global cultural climate), the end-goal is to implement blockchain oracles to monitor the 404 status of any community. The oracles will detect if a community has been deplatformed, and immediately launch a "safe house" for the community and disallow any further minting of the token until the community decides it is safe to permit new members. 
